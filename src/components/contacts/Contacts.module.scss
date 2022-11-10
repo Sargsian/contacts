@@ -1,0 +1,65 @@
+.contactsWrapper {
+  width: 100%;
+  padding: 3rem;
+  min-height: 40rem;
+
+  @media screen and (max-width: 520px) {
+    padding: 3rem 0.5rem;
+  }
+}
+
+.contacts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 30px;
+
+  @media screen and (max-width: 520px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+.addButton {
+  height: 7rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #95dfdf;
+  border: none;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+
+  &:hover,
+  &:active {
+    background-color: #b2e9e9;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 66px;
+    color: white;
+    margin-left: -33px;
+    margin-top: -3px;
+    border-top: 6px solid;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: white;
+    height: 66px;
+    margin-left: -3px;
+    margin-top: -33px;
+    border-left: 6px solid;
+  }
+
+  img {
+    filter: invert(1);
+    pointer-events: none;
+  }
+}

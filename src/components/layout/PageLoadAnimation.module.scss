@@ -1,0 +1,31 @@
+.loaderContainer {
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    to right,
+    #dee4eaff 10%,
+    #95dfdf 50%,
+    #dee4eaff 90%
+  );
+  animation: loadingAnimation 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}

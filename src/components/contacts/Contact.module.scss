@@ -1,0 +1,138 @@
+$contactBackground: #95dfdf;
+
+.contact {
+  height: 7rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+
+  & > button {
+    transition: all 0.3s;
+    position: absolute;
+    width: 18%;
+    right: 0;
+    z-index: 1;
+    height: 7rem;
+    border: none;
+    min-width: 4rem;
+    color: #838383;
+    font-weight: 400;
+    cursor: pointer;
+    background-color: #f2f2f2ff;
+    &:hover {
+      background-color: #ffffffff;
+      color: black;
+    }
+  }
+  @media screen and (max-width: 780px) {
+    height: unset;
+    padding-bottom: 2rem;
+    & > button {
+      bottom: 0;
+      height: 25%;
+      right: 0;
+      width: 50%;
+    }
+  }
+}
+
+.user {
+  background-color: $contactBackground;
+  padding: 1rem 0 1rem 1rem;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+
+  &:hover {
+    @media screen and (min-width: 780px) {
+      & + button {
+        right: -200px;
+      }
+    }
+  }
+
+  input {
+    padding-left: 8px;
+    left: -8px;
+    position: relative;
+    font-size: inherit;
+    font-family: inherit;
+    display: block;
+    border-radius: 8px;
+    outline: none;
+    border: 0px solid silver;
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    width: 18%;
+    height: 7rem;
+    border: none;
+    color: #ffffff;
+    font-weight: 400;
+    cursor: pointer;
+    background-color: rgb(83, 173, 173);
+    &:hover {
+      background-color: rgb(149, 223, 223);
+    }
+  }
+
+  @media screen and (max-width: 780px) {
+    button {
+      bottom: 0;
+      height: 25%;
+      left: 0;
+      width: 50%;
+    }
+  }
+}
+
+.userLogo {
+  width: 80px;
+  height: 80px;
+  min-width: 5rem;
+  border-radius: 50%;
+  background-color: $contactBackground;
+  pointer-events: none;
+  img {
+    filter: invert(0.95);
+    border-radius: 50%;
+  }
+}
+
+.userDetails {
+  padding-left: 1rem;
+  gap: 1rem;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  p,
+  input {
+    margin: 0.3rem 0;
+  }
+}
+
+.addTime {
+  opacity: 0.6;
+}
+
+.skeleton {
+  width: 80px;
+  height: 80px;
+  min-width: 5rem;
+  border-radius: 50%;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
